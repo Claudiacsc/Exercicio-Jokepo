@@ -22,7 +22,7 @@ escolha_computador = randint(1, 3)
 
 print("Computador escolheu:", opcoes[escolha_computador - 1])
 time.sleep(1)
-
+                                                        
 if escolha_usuario == escolha_computador:
     print("Empate!")
 elif (escolha_usuario == 1 and escolha_computador == 3) or \
