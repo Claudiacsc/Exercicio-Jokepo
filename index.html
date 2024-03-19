@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jokenpô com o PC</title>
+</head>
+<body>
+	<h2>Jokenpô com o PC</h2>
+	
+	<select>
+		<option>Pedra</option>
+		<option>Papel</option>
+		<option>Tesoura</option>
+	</select>
+	
+	<button onclick="jogar()">Jogar</button>
+	
+	<h4></h4>
+	<p></p>
+	
+	<script>
+		function jogar(){
+			const pc = numeroAleatorio(0, 2);
+			const usuario = document.querySelector("select").selectedIndex;
+			if((pc == 0 & usuario == 2) ||
+				(pc == 1 & usuario == 0) ||
+				(pc == 2 & usuario == 1)){
+				resultado("Usuário perdeu!", pc);
+			} else if (pc == usuario){
+				resultado("Usuário empatou!", pc);	
+			}else{
+				resultado("Usuário venceu!", pc);
+			}
+		}
+		
+		function resultado(mensagem, pc){
+			const opcoes = ['Pedra', 'Papel', 'Tesoura']
+			document.querySelector("h4").innerHTML = mensagem;
+			document.querySelector("p").innerHTML = 'O PC escolheu ' + opcoes[pc];
+		
+		}
+		
+		function numeroAleatorio(min, max){
+			return (Math.random()*(max - min) + min).toFixed();
+		}
+	</script>
+<body/>
+</html>	
