@@ -1,5 +1,5 @@
 from random import randint
-import time
+from time import sleep
 
 opcoes = ["Pedra", "Papel", "Tesoura"]
 opNum = ['1','2','3']
@@ -20,9 +20,17 @@ while condicao:
 
 escolha_computador = randint(1, 3)
 
+print('Jo')
+sleep(1)
+print('Ken')
+sleep(1)
+print('Pô')
+sleep(2)
+print('- ' * 15)
 print("Computador escolheu:", opcoes[escolha_computador - 1])
-time.sleep(1)
-                                                        
+print("Usuário escolheu:", opcoes[escolha_usuario -1])
+print('- ' * 15)
+                                                     
 if escolha_usuario == escolha_computador:
     print("Empate!")
 elif (escolha_usuario == 1 and escolha_computador == 3) or \
